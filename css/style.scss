@@ -5,7 +5,7 @@
 :focus,:active{outline: none;}
 a:focus,a:active{outline: none;}
 nav,footer,header,aside{display: block;}
-html,body{height: 100%; width: 100%; font-size: 100%; line-height: 1; font-size: 16px; -ms-text-size-adjust: 100%; -moz-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;}
+html,body{height: 100%; width: 100%; font-size: 100%; line-height: 1; font-size: 18px; -ms-text-size-adjust: 100%; -moz-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;}
 input,button,textarea{font-family:inherit;}
 input::-ms-clear{display: none;}
 button{cursor: pointer;background-color: transparent;}
@@ -15,7 +15,10 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+button{padding:0;border:none;font-size:inherit;color:inherit;background-color:transparent;cursor:pointer; }
 /*--------------------*/
+//Переменные
+$colorYellow: #E8AA31;
 //Шрифты
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 //rem
@@ -25,7 +28,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 }
 //Адаптавное свойство
 $maxWidth: 1920;
-$maxWidthContainer: 1400;
+$maxWidthContainer: 1440;
 
 @mixin adaptivValue($property, $startSize, $minSize, $type) {
     $addSize: $startSize - $minSize;
@@ -49,7 +52,6 @@ $maxWidthContainer: 1400;
 
 html {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
     font-weight: 500;
     color: #000;
 }
@@ -59,7 +61,7 @@ html {
     }
 }
 ._container {
-    max-width: 1400px;
+    max-width: 1410px;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -116,8 +118,8 @@ html {
 
     }
     &__logo {
-        margin-right: 158px;
-        @include adaptivValue('margin-right', 158, 10, 1);
+        margin-right: 108px;
+        @include adaptivValue('margin-right', 108, 10, 1);
     }
     &__search-container{
         flex: 1 1 auto;
@@ -136,7 +138,7 @@ html {
         align-items: center;
     }
     &__search-input{
-        font-size: 14px;
+        font-size: rem(14);
         padding-left: 41px;
         width: 377px;
         @include adaptivValue('width', 377, 70, 1);
@@ -145,17 +147,28 @@ html {
         border-radius: 3px;
         border: 1px solid rgba(4, 4, 4, 0.1);
     }
-
+    &__action{
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        @include adaptivValue('column-gap', 30, 5, 1);
+    }
     &__location {
+        display: flex;
+        align-items: center;
     }
 
     &__location-icon {
+        margin-right: 10px;
     }
 
     &__city {
     }
 
     &__contacts {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     &__tel {
@@ -165,17 +178,38 @@ html {
     }
 
     &__callback {
+        color: $colorYellow;
     }
 
     &__favourites {
     }
 
-    &__cart-menu {
-    }
-
     &__cart {
+        font-size: rem(16);
     }
 }
+
+.cart-header {
+    display: flex;
+    column-gap: 15px;
+
+    &__icon {
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+    }
+
+    &__summ {
+    }
+
+    &__link {
+        color: $colorYellow;
+    }
+}
+
 .logo {
 }
 
