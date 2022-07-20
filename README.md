@@ -1,3 +1,3 @@
 # Вёрстка нтернет-магазина "Zlatmax"
 
-Посмотреть результат можно тут: https://deluxezzz.github.io/market-zlatmax/
+Посмотреть результат можно по ссылке: https://deluxezzz.github.io/market-zlatmax/
