@@ -1,0 +1,182 @@
+@use "sass:math";
+/*Обнуление*/
+*{padding: 0; margin: 0; border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height: 100%; width: 100%; font-size: 100%; line-height: 1; font-size: 16px; -ms-text-size-adjust: 100%; -moz-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;background-color: transparent;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none; color: inherit;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+//Шрифты
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+//rem
+@function rem($px){
+    $result: math.div($px, 18) + rem;
+    @return $result;
+}
+//Адаптавное свойство
+$maxWidth: 1920;
+$maxWidthContainer: 1400;
+
+@mixin adaptivValue($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    @if $type==1 {
+        //только если меньше контейнера
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        }
+    } @else if $type==2 {
+    //Только если больше контейнера
+        #{$property}: $startSize + px;
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
+    } @else if $type==3 {
+        //Всегда
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+.header {
+
+    &__container {
+    }
+}
+._container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px;
+}
+.header-top {
+    width: 100%;
+    height: 70px;
+    font-size: rem(16);
+    color: #FFFFFF;
+    background-color: #141414;
+    &.__container{
+
+    }
+    &__nav {
+    }
+
+    &__menu {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 60px;
+        @include adaptivValue('column-gap', 60, 20, 1);
+        row-gap: 8px;
+    }
+    &__item {
+    }
+
+    &__account{
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+       
+    }
+    &__icon {
+
+    }
+
+    &__user-profile {
+
+    }
+}
+
+.header-body {
+    width: 100%;
+    height: 90px;
+    background-color: #ECF1F2;
+    &__container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+    &__logo {
+        margin-right: 158px;
+        @include adaptivValue('margin-right', 158, 10, 1);
+    }
+    &__search-container{
+        flex: 1 1 auto;
+    }
+    &__search{
+        position: relative;
+    }
+    &__search-button{
+        width: 41px;
+        height: 41px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__search-input{
+        font-size: 14px;
+        padding-left: 41px;
+        width: 377px;
+        @include adaptivValue('width', 377, 70, 1);
+        height: 41px;
+        background-color: #E4EAEB;
+        border-radius: 3px;
+        border: 1px solid rgba(4, 4, 4, 0.1);
+    }
+
+    &__location {
+    }
+
+    &__location-icon {
+    }
+
+    &__city {
+    }
+
+    &__contacts {
+    }
+
+    &__tel {
+    }
+
+    &__arrow {
+    }
+
+    &__callback {
+    }
+
+    &__favourites {
+    }
+
+    &__cart-menu {
+    }
+
+    &__cart {
+    }
+}
+.logo {
+}
+
+
