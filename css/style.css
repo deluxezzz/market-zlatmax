@@ -139,12 +139,11 @@ html {
   align-items: center;
 }
 .header-body__logo {
-  margin-right: 108px;
-  margin-right: 108px;
+  margin-right: 158px;
 }
 @media (max-width: 1440px) {
   .header-body__logo {
-    margin-right: calc(10px + 98 * ((100vw - 320px) / 1120));
+    margin-right: calc(10px + 148 * ((100vw - 320px) / 1120));
   }
 }
 .header-body__search-container {
@@ -163,6 +162,15 @@ html {
   justify-content: center;
   align-items: center;
 }
+.header-body__search-button::-moz-placeholder {
+  color: 1px solid rgba(4, 4, 4, 0.5);
+}
+.header-body__search-button:-ms-input-placeholder {
+  color: 1px solid rgba(4, 4, 4, 0.5);
+}
+.header-body__search-button::placeholder {
+  color: 1px solid rgba(4, 4, 4, 0.5);
+}
 .header-body__search-input {
   font-size: 0.7777777778rem;
   padding-left: 41px;
@@ -177,6 +185,10 @@ html {
   .header-body__search-input {
     width: calc(70px + 307 * ((100vw - 320px) / 1120));
   }
+}
+.header-body__search-input:focus {
+  outline: auto;
+  color: rgba(4, 4, 4, 0.5);
 }
 .header-body__action {
   display: flex;
@@ -202,6 +214,38 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
+  margin-right: 20px;
+}
+.header-body__arrow {
+  width: 16px;
+  height: 10px;
+  position: absolute;
+  top: 3px;
+  right: -22px;
+  transition: transform 0.1s ease-in-out;
+}
+.header-body__arrow._popup-active {
+  transform: rotate(-180deg);
+}
+.header-body__popup {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 20px;
+  right: -22px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transform: translate(0, -50%) scale(1, 0);
+  transition: transform 0.1s ease-in-out;
+}
+.header-body__popup._popup-active {
+  transform: translate(0, 0) scale(1, 1);
 }
 .header-body__callback {
   color: #E8AA31;
@@ -214,6 +258,25 @@ html {
   display: flex;
   -moz-column-gap: 15px;
        column-gap: 15px;
+}
+.cart-header__icon {
+  width: 31px;
+  height: 31px;
+  position: relative;
+}
+.cart-header__icon span {
+  font-size: 10px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #E8AA31;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: -6px;
 }
 .cart-header__body {
   display: flex;
