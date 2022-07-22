@@ -64,10 +64,7 @@ html {
     max-width: 1410px;
     height: 100%;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 15px;
+    padding: 10px;
 }
 .header-top {
     width: 100%;
@@ -75,8 +72,10 @@ html {
     font-size: rem(16);
     color: #FFFFFF;
     background-color: #141414;
-    &.__container{
-
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     &__nav {
     }
@@ -118,13 +117,19 @@ html {
 
     }
     &__logo {
-        @include adaptivValue('margin-right', 158, 10, 1);
+        @include adaptivValue('margin-right', 158, 1, 1);
+        @media (max-width:1300px){
+            @include adaptivValue('margin-right', 50, 5, 1);
+        }
     }
     &__search-container{
         flex: 1 1 auto;
     }
-    &__search{
+    &__search-form{
+        max-width: 377px;
+        display: flex;
         position: relative;
+        
     }
     &__search-button{
         width: 41px;
@@ -135,29 +140,31 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
-        &::placeholder{
-            color: 1px solid rgba(4, 4, 4, 0.5);
-        }
+       
     }
     &__search-input{
+        width: 100%;
         font-size: rem(14);
         padding-left: 41px;
-        width: 377px;
-        @include adaptivValue('width', 377, 70, 1);
         height: 41px;
         background-color: #E4EAEB;
         border-radius: 3px;
         border: 1px solid rgba(4, 4, 4, 0.1);
+        margin-right: 10px;
+        &::placeholder{
+            color: rgba(0, 0, 0, 0.5);
+        }
         &:focus{
             outline: auto;
-            color: rgba(4, 4, 4, 0.5);
         }
         
     }
     &__action{
+        margin-left: 10px;
+        
+        flex: 0 0 auto;
         display: flex;
         align-items: center;
-        column-gap: 30px;
         @include adaptivValue('column-gap', 30, 5, 1);
     }
     &__location {
@@ -181,6 +188,7 @@ html {
     }
 
     &__tel {
+        flex: 0 0 auto;
         
     }
 
@@ -268,4 +276,80 @@ html {
 .logo {
 }
 
+.header-catalog {
+    height: 70px;
+
+    background-color: #141414;
+    &__container {
+        
+    }
+}
+.catalog {
+    height: 100%;
+    line-height: math.div(22px, 18px);
+    color: #fff;
+    &__list {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        text-align: center;
+        
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 5px 0;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.menu-catalog {
+    font-size: rem(16);
+    color: #fff;
+    background-color: #141414;
+    &__container {
+    }
+
+    &__titles {
+        height: 60px;
+        font-weight: 700;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        line-height: math.div(20,16);
+        @include adaptivValue('column-gap', 95, -130, 1);
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    &__title {
+        display: block;
+        
+    }
+}
+.catalog-footer {
+    
+    height: 90px;
+    color: $colorYellow;
+        height: 60px;
+        font-weight: 700;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        line-height: math.div(20,16);
+        @include adaptivValue('column-gap', 95, -130, 1);
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+    &__text {
+        display: block;
+        
+    }
+}
 
