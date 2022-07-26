@@ -33,7 +33,31 @@ if (catalogLink){
     
 }
 //бургер
+let headerNav = document.querySelector('.header-top__nav');
+
 document.querySelector('.burger').addEventListener('click', function(){
     document.querySelector('.burger span').classList.toggle('active');
+    headerNav.classList.toggle('_open-nav');
+    
 });
-document.querySelector('.menu').classList.toggle("animate");
+// перемещение иконок при адаптиве
+let headerIcons = [document.querySelector('._svg-favourites'), document.querySelector('._svg-cart')];
+let headerTop = document.querySelector('.header-top__account');
+
+if (headerIcons){
+    window.addEventListener('resize', function(){
+        if (window.innerWidth <= 922){ 
+    
+            for (let i=0; i < headerIcons.length; i++){
+                headerTop.append(headerIcons[i]);
+            }
+        }
+    });
+    if (window.innerWidth <= 922){ 
+    
+        for (let i=0; i < headerIcons.length; i++){
+            headerTop.append(headerIcons[i]);
+        }
+    }
+}
+

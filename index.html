@@ -21,12 +21,21 @@
                         </ul>
                     </nav>
                     <div class="header-top__account">
-                        <a href="" class="header-top__icon"><img src="img/user.svg" alt=""></a>
+                        <a href="tel: 88007774967" class="header-top__icon _svg-tel">
+                            <svg class="header-top__svg-tel svg-tel">
+                                <use xlink:href="sprite.svg#tel"></use>
+                            </svg>
+                        </a>
+                        <a href="" class="header-top__icon _svg-user">
+                            <svg class="header-top__svg-user svg-user">
+                                <use xlink:href="sprite.svg#user"></use>
+                            </svg>
+                        </a>
                         <a href="" class="header-top__user-profile">Личный кабинет</a>
+                        <div class="header__burger burger">
+                            <span></span>
+                        </div>
                     </div>
-                </div>
-                <div class="header__burger burger">
-                    <span></span>
                 </div>
             </div>
             <div class="header-body">
@@ -43,6 +52,7 @@
                             <div class="header-body__location-icon"><img src="img/location.svg" alt=""></div>
                             <div class="header-body__city">Москва</div>
                         </div>
+                        <!-- от сюда -->
                         <div class="header-body__contacts">
                             <a href="tel: 88007774967" class="header-body__tel">8-800-777-49-67</a>
                             <span class="header-body__popup">
@@ -52,17 +62,24 @@
                             <button class="header-body__arrow"><img src="img/arrow-bottom.svg" alt=""></button>
                             <button class="header-body__callback">Заказать звонок</button>
                         </div>
-                        <button class="header-body__favourites"><img src="img/favourites.svg" alt=""></button>
-                        <div class="header-body__cart cart-header">
-                            <button class="cart-header__icon">
-                                <img src="img/cart.svg" alt="">
+                        <a href="" class="header-body__favourites _svg-favourites">
+                            <svg class="header-top__svg-user svg-favourites">
+                                <use xlink:href="sprite.svg#favourites"></use>
+                            </svg>
+                        </a>
+                        <div class="header-body__cart cart">
+                            <a href="" class="cart-header__icon _svg-cart">
+                                <svg class="header-top__svg-user svg-cart">
+                                    <use xlink:href="sprite.svg#cart"></use>
+                                </svg>
                                 <span>0</span>
-                            </button>
+                            </a>
                             <div class="cart-header__body">
                                 <div class="cart-header__summ">0 р.</div>
                                 <button class="cart-header__link">Оформить заказ</button>
                             </div>
                         </div>
+                        <!-- до сюда -->
                     </div>
                 </div>
             </div>
