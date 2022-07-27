@@ -282,6 +282,7 @@ html {
         @include adaptivValue('column-gap', 30, 5, 1);
     }
     &__location {
+        order: 1;
         display: flex;
         align-items: center;
     }
@@ -294,6 +295,7 @@ html {
     }
 
     &__contacts {
+        order: 2;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -343,9 +345,16 @@ html {
     &__callback {
         color: $colorYellow;
     }
-    &__cart {
-        font-size: rem(16);
+    &__favourites{
+        order: 3;
     }
+    &__cart {
+        order: 4;
+        font-size: rem(16);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }    
 }
 
 .cart-header {
@@ -353,6 +362,7 @@ html {
     
     
     &__icon {
+        order: 1;
         padding-top: 5px;
         display: inline-block;
         position: relative;
@@ -373,6 +383,7 @@ html {
     }
     
     &__body {
+        order: 2;
         display: inline-block;
         margin-left: 15px;
     }

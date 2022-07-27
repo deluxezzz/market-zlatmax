@@ -334,6 +334,7 @@ html {
   }
 }
 .header-body__location {
+  order: 1;
   display: flex;
   align-items: center;
 }
@@ -341,6 +342,7 @@ html {
   margin-right: 10px;
 }
 .header-body__contacts {
+  order: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -388,14 +390,22 @@ html {
 .header-body__callback {
   color: #E8AA31;
 }
+.header-body__favourites {
+  order: 3;
+}
 .header-body__cart {
+  order: 4;
   font-size: 0.8888888889rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cart-header {
   display: flex;
 }
 .cart-header__icon {
+  order: 1;
   padding-top: 5px;
   display: inline-block;
   position: relative;
@@ -415,6 +425,7 @@ html {
   right: -6px;
 }
 .cart-header__body {
+  order: 2;
   display: inline-block;
   margin-left: 15px;
 }
