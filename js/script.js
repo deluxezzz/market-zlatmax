@@ -68,3 +68,21 @@ if (headerIconFavourites || headerIconCart){
     }
 }
 
+let catalog = document.querySelector('.catalog-wrapper');
+let catalogMobile = document.querySelector('.catalog-mobile');
+if (catalog){
+    window.addEventListener('resize', function(){
+        if (window.innerWidth <= 768){
+            catalogMobile.append(catalog);
+        }
+        else {
+            catalogMobile.append(catalog);
+        }
+    });
+    if (window.innerWidth <= 768){ 
+        catalogMobile.append(catalog);
+    }
+    else {
+        catalogMobile.append(catalog);
+    }
+}

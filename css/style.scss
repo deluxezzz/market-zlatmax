@@ -124,11 +124,23 @@ html {
     }
     &__nav {
         @media (max-width:992px){
-            transform: translate(0 , -300%);
-            // transition: transform 0.5s ease;
-            position: absolute;
+            transform: translate(0 , -200%);
+            
+            transition: transform 0.5s ease 0s;
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            background-color: #141414;
+            width: 100%;
+            height: 100vh;
+            @include adaptivValue('font-size', 50, 16, 1);
+            line-height: math.div(50px, 30px);
+
             &._open-nav{
                 transform: translate(0,0);
+                
+                
             }
         }
     }
@@ -137,9 +149,17 @@ html {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        column-gap: 60px;
         @include adaptivValue('column-gap', 60, 20, 1);
         row-gap: 8px;
+        @media (max-width:992px){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &:first-child{
+                margin-top: 30px;
+            }
+        }
     }
     &__item {
     }
@@ -174,6 +194,7 @@ html {
     cursor: pointer;
     position: relative;
     order: 5;
+    z-index: 10;
     @media (max-width:992px){
         display: inline-block;
         position: relative;
@@ -233,7 +254,7 @@ html {
     &__logo {
         @include adaptivValue('margin-right', 158, 1, 1);
         @media (max-width:1300px){
-            @include adaptivValue('margin-right', 50, 5, 1);
+            @include adaptivValue('margin-right', 70, 15, 1);
         }
     }
     &__search-container{
@@ -247,6 +268,9 @@ html {
     }
     &__search-button{
         width: 41px;
+        @media(max-width:576px){
+            width: 31px;
+        }
         height: 41px;
         position: absolute;
         top: 0;
@@ -260,6 +284,9 @@ html {
         width: 100%;
         font-size: rem(14);
         padding-left: 41px;
+        @media(max-width:576px){
+            padding-left: 31px;
+        }
         height: 41px;
         background-color: #E4EAEB;
         border-radius: 3px;
@@ -275,7 +302,9 @@ html {
     }
     &__action{
         margin-left: 10px;
-        
+        @media(max-width:576px){
+            display: none;
+        }
         flex: 0 0 auto;
         display: flex;
         align-items: center;
@@ -292,6 +321,7 @@ html {
     }
 
     &__city {
+        
     }
 
     &__contacts {
@@ -304,6 +334,7 @@ html {
         @media(max-width:992px){
             display: none;
         }
+
     }
 
     &__tel {
@@ -404,7 +435,21 @@ html {
 
 .logo {
 }
-
+.catalog-mobile{
+    display: none;
+    @media(max-width:992px){
+        display: inline-block;
+    }
+}
+.catalog-wrapper{
+    @media(max-width:768px){
+        
+        .open__mobile-menu{
+            
+        }
+    }
+    
+}
 .header-catalog {
     height: 70px;
     background-color: #141414;
@@ -421,17 +466,25 @@ html {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+        @media(max-width:768px){
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #141414;
+            z-index: 6;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin: 15px 0 0 15px;
+        }
     }
-    &__item {
-        text-align: center;
+    &__item {   
         height: 70px;
         display: flex;
-        justify-content: center;
         align-items: center;
         position: relative;
-        
-        
     }
     &__link {
         display: block;
