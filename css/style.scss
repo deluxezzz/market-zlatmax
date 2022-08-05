@@ -101,10 +101,25 @@ html {
     }
 }
 ._container {
-    max-width: 1210px;
+    max-width: 1410px;
     height: 100%;
     margin: 0 auto;
     padding: 10px;
+}
+.button {
+    height: 50px;
+    font-weight: 600;
+    color: #fff;
+    background-color: $colorYellow;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover{
+        box-shadow: 0px 4px 25px rgba(232, 170, 49, 0.63);
+    }
 }
 .header-top {
     width: 100%;
@@ -418,6 +433,7 @@ html {
         order: 2;
         display: inline-block;
         margin-left: 15px;
+        
     }
 
     &__summ {
@@ -603,6 +619,9 @@ html {
     min-height: 100%;
     background: url("../img/main-block/bg-main-block.jpg") center / cover no-repeat;
     overflow: hidden;
+    @media(max-width:576px){
+        background: url("../img/main-block/bg-main-block_mobile.jpg") center / cover no-repeat;
+    }
     &__container{
     }
     &__slider{
@@ -614,33 +633,50 @@ html {
     &__container {
     }
     &__body {
+        @media(max-width:992px){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
     }
     &__info{
     }
     &__title, &__subtitle{
         font-size: rem(36);
-        line-height: math.div(46, 36);
+        line-height: 128%;
         letter-spacing: 3%;
     }
     &__title {
         font-weight: 700;
         padding-top: 28px;
+        @media(max-width:576px){
+            font-size: 26px;
+        }
     }
     &__subtitle {
         padding-top: 10px;
+        @media(max-width:576px){
+            font-size: 23px;
+        }
     }
     &__text{
         padding-top: 30px;
         font-weight: 500;
         font-size: rem(20);
         line-height: math.div(30, 20);
+        @media(max-width:576px){
+            font-size: 16px;
+        }
     }
 
     &__button {
         margin-top: 60px;
         font-size: 20px;
         padding: 0 52px;
+        @media(max-width:992px){
+            display: none;
+        }
     }
     &__media {
         margin-top: 30px;
@@ -650,9 +686,14 @@ html {
 
     &__image {
         position: relative;
+        
         & img {
             position: relative;
             z-index: 2;
+            @media(max-width:576px){
+                width: 260px;
+                height: 290px;
+            }
         }
         &::before{
             content: '';
@@ -665,6 +706,9 @@ html {
             border: 2px solid white;
             z-index: 1;
             transform: translate(38% , -3.5%);
+            @media(max-width:992px){
+                display: none;
+            }
         }
     }
     &__tip{
@@ -679,6 +723,9 @@ html {
         justify-content: center;
         align-items: center;
         transition: 0.3s box-shadow ease-in-out;
+        @media(max-width:576px){
+            display: none;
+        }
         &:hover{
             box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
         }
@@ -709,21 +756,7 @@ html {
         left: percentage(394/448);
     }
 }
-.button {
-    height: 50px;
-    font-weight: 600;
-    color: #fff;
-    background-color: $colorYellow;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
-    transition: box-shadow 0.3s ease-in-out;
-    &:hover{
-        box-shadow: 0px 4px 25px rgba(232, 170, 49, 0.63);
-    }
-}
+
 .slide {
     display: none;
     &._slide-on{
@@ -735,33 +768,39 @@ html {
     max-width: 100%;
     color: #fff;
     font-weight: 600;
-    @include adaptivValue('font-size', 20, 10, 1);
+    @include adaptivValue('font-size', 20, 9.6, 1);
     line-height: math.div(32 , 20);
     margin-top: 58px;
     margin-bottom: 58px;
+
+    @media(max-width:576px){
+        font-size: rem(20);
+        margin-top: 46px;
+        margin-bottom: 30px;
+    }
     &__body {
         display: flex;
         justify-content: space-between;
-        column-gap: 10px;
+        gap: 10px;
+        @media(max-width:576px){
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
     }
-
     &__item {
         max-width: 100%;
-        // flex: 1 1 20%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        // align-items: center;
-        // text-align: center;
+        @media(max-width:576px){
+            max-width: 350px;
+        }
     }
-
     &__image {
-        
         text-align: center;
     }
-
-    &__text {
-      
+    &__text {  
        text-align: center;
     }
 }
