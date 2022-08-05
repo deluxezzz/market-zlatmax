@@ -101,7 +101,7 @@ html {
     }
 }
 ._container {
-    max-width: 1410px;
+    max-width: 1210px;
     height: 100%;
     margin: 0 auto;
     padding: 10px;
@@ -113,6 +113,7 @@ html {
     color: #FFFFFF;
     background-color: #141414;
     position: relative;
+    
     & a:hover {
         text-decoration: underline;
     }
@@ -596,9 +597,28 @@ html {
     }
 }
 
+.main-block {
+    color: #fff;
+    width: 100%;
+    min-height: 100%;
+    background: url("../img/main-block/bg-main-block.jpg") center / cover no-repeat;
+    overflow: hidden;
+    &__container{
+    }
+    &__slider{
+    }
+    &__advantages {
+    }
+}
 .slider {
+    &__container {
+    }
+    &__body {
+
+    }
+    &__info{
+    }
     &__title, &__subtitle{
-        
         font-size: rem(36);
         line-height: math.div(46, 36);
         letter-spacing: 3%;
@@ -607,11 +627,9 @@ html {
         font-weight: 700;
         padding-top: 28px;
     }
-
     &__subtitle {
         padding-top: 10px;
     }
-
     &__text{
         padding-top: 30px;
         font-weight: 500;
@@ -624,40 +642,6 @@ html {
         font-size: 20px;
         padding: 0 52px;
     }
-}
-.button {
-    height: 50px;
-    font-weight: 600;
-    color: #fff;
-    background-color: $colorYellow;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
-    transition: box-shadow 0.3s ease 0s;
-    &:hover{
-        box-shadow: 0px 4px 25px rgba(232, 170, 49, 0.63);
-    }
-}
-
-.main-block {
-    color: #fff;
-    width: 100%;
-    height: 100%;
-    background: url("../img/main-block/bg-main-block.jpg") center / cover no-repeat;
-    overflow: hidden;
-    &__container {
-    }
-
-    &__body {
-        display: flex;
-
-    }
-
-    &__slider {
-    }
-
     &__media {
         margin-top: 30px;
         @include adaptivValue('margin-right', 70, 0, 1);
@@ -680,13 +664,13 @@ html {
             border-radius: 50%;
             border: 2px solid white;
             z-index: 1;
-            transform: translate(35% , -3.5%);
+            transform: translate(38% , -3.5%);
         }
     }
     &__tip{
         cursor: pointer;
         position: absolute;
-        z-index: 5;
+        z-index: 2;
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -694,6 +678,10 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: 0.3s box-shadow ease-in-out;
+        &:hover{
+            box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+        }
         & span {
             width: 19px;
             height: 19px;
@@ -721,4 +709,59 @@ html {
         left: percentage(394/448);
     }
 }
+.button {
+    height: 50px;
+    font-weight: 600;
+    color: #fff;
+    background-color: $colorYellow;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover{
+        box-shadow: 0px 4px 25px rgba(232, 170, 49, 0.63);
+    }
+}
+.slide {
+    display: none;
+    &._slide-on{
+        display: flex;
+    }
+}
 
+.advantages {
+    max-width: 100%;
+    color: #fff;
+    font-weight: 600;
+    @include adaptivValue('font-size', 20, 10, 1);
+    line-height: math.div(32 , 20);
+    margin-top: 58px;
+    margin-bottom: 58px;
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 10px;
+    }
+
+    &__item {
+        max-width: 100%;
+        // flex: 1 1 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // align-items: center;
+        // text-align: center;
+    }
+
+    &__image {
+        
+        text-align: center;
+    }
+
+    &__text {
+      
+       text-align: center;
+    }
+}
