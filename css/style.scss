@@ -787,6 +787,9 @@ html {
             align-items: center;
             gap: 30px;
         }
+        @media(max-width:768px){
+            flex-wrap: wrap;
+        }
     }
     &__item {
         max-width: 100%;
@@ -796,11 +799,16 @@ html {
         @media(max-width:576px){
             max-width: 350px;
         }
+        @media(max-width:768px){
+            flex: 1 1 49%;
+        }
+        
     }
     &__image {
         text-align: center;
     }
     &__text {  
        text-align: center;
+       justify-items: start;
     }
 }

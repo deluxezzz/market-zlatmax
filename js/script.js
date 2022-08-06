@@ -12,7 +12,6 @@ if (popupButton){
 //меню-каталог
 let catalogLink = document.querySelectorAll('.catalog__link');
 let catalogMenu = document.querySelectorAll('.menu-catalog');
-let catalogWrapper = document.querySelectorAll('.catalog-wrapper');
 
 if (catalogLink){
     for (let i = 0; i < catalogLink.length; i++){
@@ -68,21 +67,23 @@ if (headerIconFavourites || headerIconCart){
     }
 }
 
-let catalog = document.querySelector('.catalog-wrapper');
+let catalogWP = document.querySelector('.catalog-wp');
 let catalogMobile = document.querySelector('.catalog-mobile');
-if (catalog){
+let catalogWrapper = document.querySelector('.catalog-wrapper');
+
+if (catalogWP){
     window.addEventListener('resize', function(){
         if (window.innerWidth <= 768){
-            catalogMobile.append(catalog);
+            catalogMobile.append(catalogWrapper);
         }
         else {
-            catalogMobile.append(catalog);
+            catalogWP.append(catalogWrapper);
         }
     });
-    if (window.innerWidth <= 768){ 
-        catalogMobile.append(catalog);
+    if (window.innerWidth <= 768){
+        catalogMobile.append(catalogWrapper);
     }
     else {
-        catalogMobile.append(catalog);
+        catalogWP.append(catalogWrapper);
     }
 }

@@ -847,6 +847,11 @@ html {
     gap: 30px;
   }
 }
+@media (max-width: 768px) {
+  .advantages__body {
+    flex-wrap: wrap;
+  }
+}
 .advantages__item {
   max-width: 100%;
   display: flex;
@@ -858,9 +863,15 @@ html {
     max-width: 350px;
   }
 }
+@media (max-width: 768px) {
+  .advantages__item {
+    flex: 1 1 49%;
+  }
+}
 .advantages__image {
   text-align: center;
 }
 .advantages__text {
   text-align: center;
+  justify-items: start;
 }/*# sourceMappingURL=style.css.map */
