@@ -211,6 +211,7 @@ html {
     position: relative;
     order: 5;
     z-index: 10;
+    
     @media (max-width:992px){
         display: inline-block;
         position: relative;
@@ -220,7 +221,7 @@ html {
         width: 100%;
         position: absolute;
         height: 3px;
-        background: #fff;
+        background: rgb(248, 248, 248);
         display: block;
         transition: .3s;
         border-radius: 5px;
