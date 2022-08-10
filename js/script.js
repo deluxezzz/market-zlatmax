@@ -1,3 +1,24 @@
+//инициализация Swiper
+const swiper = new Swiper('.slider-hits__container', {
+    // Optional parameters
+    slidesPerView: 4,
+    spaceBetween: 15,
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        dalay: 1000,
+        stopOnLastSlide: false,
+        
+    }
+});
 //попап с телефонами
 let popupButton = document.querySelector('.header-body__arrow');
 let popupMenu = document.querySelector('.header-body__popup');
