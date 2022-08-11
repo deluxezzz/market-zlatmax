@@ -620,7 +620,7 @@ html {
     width: 100%;
     min-height: 100%;
     background: url("../img/main-block/bg-main-block.jpg") center / cover no-repeat;
-    overflow: hidden;
+    
     @media(max-width:576px){
         background: url("../img/main-block/bg-main-block_mobile.jpg") center / cover no-repeat;
     }
@@ -632,15 +632,19 @@ html {
     }
 }
 .slider {
+    width: 100%;
     &__container {
     }
     &__body {
+        transform: translate(15px,0) !important;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
         @media(max-width:992px){
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
         }
-
     }
     &__info{
     }
@@ -697,21 +701,21 @@ html {
                 height: 290px;
             }
         }
-        &::before{
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 414px;
-            height: 414px;
-            border-radius: 50%;
-            border: 2px solid white;
-            z-index: 1;
-            transform: translate(38% , -3.5%);
-            @media(max-width:992px){
-                display: none;
-            }
-        }
+        // &::before{
+        //     content: '';
+        //     position: absolute;
+        //     bottom: 0;
+        //     left: 0;
+        //     width: 414px;
+        //     height: 414px;
+        //     border-radius: 50%;
+        //     border: 2px solid white;
+        //     z-index: 1;
+        //     transform: translate(38% , -3.5%);
+        //     @media(max-width:992px){
+        //         display: none;
+        //     }
+        // }
     }
     &__tip{
         cursor: pointer;
@@ -759,12 +763,7 @@ html {
     }
 }
 
-.slide {
-    display: none;
-    &._slide-on{
-        display: flex;
-    }
-}
+
 
 .advantages {
     max-width: 100%;
@@ -948,23 +947,20 @@ html {
 
 
 .slider-hits {
-
+    
     &__container {
-        
+       
     }
 
     &__body {
+        margin: 0 3px !important;   
         display: flex;
         padding: 60px 0;
-
-        min-width: 0;
     }
 
     &__item {
     }
 }
-
-
 
 .product-card {
     height: 100%;
@@ -1105,3 +1101,4 @@ html {
         content: "\f005";
     }
 }
+

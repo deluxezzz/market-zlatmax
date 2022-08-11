@@ -6,6 +6,7 @@ const swiper = new Swiper('.slider-hits__container', {
     // If we need pagination
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
     },
   
     // Navigation arrows
@@ -13,8 +14,22 @@ const swiper = new Swiper('.slider-hits__container', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    
     autoplay: {
         dalay: 1000,
+        stopOnLastSlide: false,
+        
+    }
+});
+const swiper2 = new Swiper('.main-block__container', {
+    // Optional parameters
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    autoplay: {
+        dalay: 2000,
         stopOnLastSlide: false,
         
     }
