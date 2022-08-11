@@ -1184,11 +1184,22 @@ html {
     }
 }
 .add-info-footer {
-    
     &__container {
         display: flex;
         justify-content: space-between;
+        width: 100%;
         @include adaptivValue('column-gap', 25, 3, 1);
+        position: relative;
+        padding-top: 35px;
+        &::after{
+            content: '';
+            height: 1px;
+            width: 100%;
+            background-color: #FFFFFF;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
     }
 
     &__column {

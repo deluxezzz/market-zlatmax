@@ -1154,14 +1154,26 @@ html {
 .add-info-footer__container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   -moz-column-gap: 25px;
        column-gap: 25px;
+  position: relative;
+  padding-top: 35px;
 }
 @media (max-width: 1440px) {
   .add-info-footer__container {
     -moz-column-gap: calc(3px + 22 * ((100vw - 320px) / 1120));
          column-gap: calc(3px + 22 * ((100vw - 320px) / 1120));
   }
+}
+.add-info-footer__container::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #FFFFFF;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .add-info-footer__column {
   flex: 0 0 22%;
