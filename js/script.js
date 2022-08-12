@@ -1,39 +1,65 @@
 //инициализация Swiper
-const swiper = new Swiper('.slider-hits__container', {
-    // Optional parameters
-    slidesPerView: 4,
-    spaceBetween: 15,
-    // If we need pagination
+const swiperMainBlock = new Swiper('.main-block__container', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
-  
-    // Navigation arrows
+    autoplay: {
+        dalay: 3000,
+        stopOnLastSlide: false,
+    },
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+        pageUpDown: true,
+    },
+    loop: true,
+});
+const swiperSliderHits = new Swiper('.slider-hits__container', {
+    slidesPerView: 4,
+    spaceBetween: 15,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    
     autoplay: {
-        dalay: 1000,
+        dalay: 3000,
         stopOnLastSlide: false,
-        
-    }
+    },
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+        pageUpDown: true,
+    },
+    loop: true,
 });
-const swiper2 = new Swiper('.main-block__container', {
-    // Optional parameters
-    // If we need pagination
+const swiperNewProducts = new Swiper('.new-products__swiper', {
+    slidesPerView: 3,
+    spaceBetween: 15,
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
-    autoplay: {
-        dalay: 2000,
-        stopOnLastSlide: false,
-        
-    }
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    // autoplay: {
+    //     dalay: 3000,
+    //     stopOnLastSlide: false,
+    // },
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+        pageUpDown: true,
+    },
+    
 });
+
 //попап с телефонами
 let popupButton = document.querySelector('.header-body__arrow');
 let popupMenu = document.querySelector('.header-body__popup');
