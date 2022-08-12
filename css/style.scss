@@ -825,8 +825,6 @@ html {
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
-        
-
     }
 
     &__card {
@@ -879,9 +877,8 @@ html {
     }
 
     &__list {
-        font-size: rem(18);
     }
-
+    
     &__link {
         display: block;
         position: relative;
@@ -1114,15 +1111,14 @@ html {
     &__text {
         
     }
-
     &__body {
         background-color: #141414;
     }
-
     &__body-info {
     }
-
     &__body-add-info {
+    }
+    &__copyright {
     }
 }
 .text-footer {
@@ -1147,7 +1143,7 @@ html {
 }
 
 .info-footer {
-    padding: 100px 0 0 0;
+    padding: 70px 0 0 0;
     &__container {
         display: flex;
         justify-content: space-between;
@@ -1161,26 +1157,32 @@ html {
 
     &__title {
         font-weight: 600;
-        line-height: 22px;
+        line-height: math.div(22,18);
         text-transform: uppercase;
+        a:hover{
+            text-decoration: underline;
+        }
     }
-
     &__nav {
     }
-
     &__list {
-        line-height: 22px;
+        line-height: math.div(26,18);
     }
-
     &__item {
         margin: 30px 0;
+        a:hover{
+            text-decoration: underline;
+        }
     }
     &__text{
-        line-height: 22px;
+        
         margin: 30px 0;
     }
     &__link {
         color: $colorYellow;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 .add-info-footer {
@@ -1201,8 +1203,59 @@ html {
             top: 0;
         }
     }
-
     &__column {
         flex: 0 0 22%;
     }
 }
+
+.lantern-card {
+    min-height: 100%;
+    &__info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__text{
+        width: 60%;
+        line-height: math.div(24,18);
+        flex: 1 1 auto;
+    }
+    &__button {
+        padding: 0 80px;
+        margin: 15px 0 25px;
+    }
+}
+
+.footer-copyright {
+    &__container {
+        padding: 30px 0;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: rem(14);
+        line-height: math.div(27,14);
+        color: rgba(255, 255, 255, 0.8);
+        &::after{
+            content: '';
+            height: 1px;
+            width: 100%;
+            background-color: #FFFFFF;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &__text {
+    }
+
+    &__co {
+        width: 100%;
+        text-align: end;
+    }
+}
+
