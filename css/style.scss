@@ -1254,7 +1254,39 @@ html {
         width: 39px;
         height: 39px;
     }
+
+    &__form {
+    }
+    &__input-wp{
+        display: flex;
+        border-radius: 3px;
+        border: 1px solid #fff;
+        margin-bottom: 20px;
+    }
+    &__input {
+        height: 50px;
+        padding-left: 20px;
+        width: 275px;
+        background: rgba(255, 255, 255, 0.05); 
+    }
+    &__button {
+        position: relative;
+        z-index: 2;
+        width: 52px;
+        height: 52px;
+        background-color: $colorYellow;
+    }
+
+    &__checkbox {
+        margin-right: 11px;
+        
+    }
+    &__checkbox-wp{
+            
+    }
 }
+
+
 .add-info-footer {
     padding-bottom: 30px;
     &__container {

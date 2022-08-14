@@ -1375,9 +1375,14 @@
                         <div class="info-footer__title">Новостная рассылка</div>
                         <nav class="info-footer__nav">
                             <ul class="info-footer__list">
-                                <li class="info-footer__item">Подпишитесь прямо сейчас!</li>
-                                <li class="info-footer__item"><input type="text" name="email" placeholder="Укажите e-mail"></li>
-                                <li class="info-footer__item">Я прочитал Условия соглашения и согласен с условиями </li>
+                                <p class="info-footer__item">Подпишитесь прямо сейчас!</p>
+                                <form class="info-footer__form" action="#" method="get">
+                                    <div class="info-footer__input-wp">
+                                        <input class="info-footer__input" type="text" name="email" placeholder="Укажите e-mail">
+                                        <button class="info-footer__button" type="submit"><img src="img/arrow-right-white.svg" alt=""></button>
+                                    </div>
+                                    <p  class="info-footer__checkbox-wp"><input class="info-footer__checkbox" type="checkbox" name="agreement" value="yes" checked>Я прочитал Условия соглашения и согласен с условиями</p>
+                                </form>
                             </ul>
                         </nav>
                     </div>
