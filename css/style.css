@@ -1129,6 +1129,26 @@ html {
 .new-products__swiper {
   flex: 0 0 75.5%;
 }
+.lantern-card {
+  min-height: 100%;
+}
+.lantern-card__info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.lantern-card__text {
+  width: 60%;
+  line-height: 1.3333333333;
+  flex: 1 1 auto;
+}
+.lantern-card__button {
+  padding: 0 80px;
+  margin: 15px 0 25px;
+}
+
 .swiper-pagination-bullet {
   height: 3px;
   width: 18px;
@@ -1236,6 +1256,9 @@ html {
   width: 52px;
   height: 52px;
   background-color: #E8AA31;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .info-footer__checkbox {
   margin-right: 11px;
@@ -1269,26 +1292,6 @@ html {
 }
 .add-info-footer__column {
   flex: 0 0 22%;
-}
-
-.lantern-card {
-  min-height: 100%;
-}
-.lantern-card__info {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-.lantern-card__text {
-  width: 60%;
-  line-height: 1.3333333333;
-  flex: 1 1 auto;
-}
-.lantern-card__button {
-  padding: 0 80px;
-  margin: 15px 0 25px;
 }
 
 .footer-copyright__container {

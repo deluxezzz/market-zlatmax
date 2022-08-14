@@ -1150,7 +1150,25 @@ html {
     }
 }
 
-
+.lantern-card {
+    min-height: 100%;
+    &__info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__text{
+        width: 60%;
+        line-height: math.div(24,18);
+        flex: 1 1 auto;
+    }
+    &__button {
+        padding: 0 80px;
+        margin: 15px 0 25px;
+    }
+}
 .swiper-pagination-bullet{
     height: 3px;
     width: 18px;
@@ -1275,6 +1293,9 @@ html {
         width: 52px;
         height: 52px;
         background-color: $colorYellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__checkbox {
@@ -1311,29 +1332,10 @@ html {
     }
 }
 
-.lantern-card {
-    min-height: 100%;
-    &__info {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-    }
-    &__text{
-        width: 60%;
-        line-height: math.div(24,18);
-        flex: 1 1 auto;
-    }
-    &__button {
-        padding: 0 80px;
-        margin: 15px 0 25px;
-    }
-}
+
 
 .footer-copyright {
     &__container {
-
         padding-top: 30px;
         padding-bottom: 30px;
         position: relative;
