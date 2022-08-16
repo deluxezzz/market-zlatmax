@@ -16,8 +16,23 @@ const swiperMainBlock = new Swiper('.main-block__swiper', {
     speed: 600,
 });
 const swiperSliderHits = new Swiper('.slider-hits__container', {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 15,
+    breakpoints: {
+        // when window width is >= 320px
+        576: {
+            slidesPerView: 2,
+        },
+        // when window width is >= 480px
+        992: {
+            slidesPerView: 3,
+        },
+        // when window width is >= 640px
+        1200: {
+          slidesPerView: 4,
+          
+        }
+    },
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -37,8 +52,22 @@ const swiperSliderHits = new Swiper('.slider-hits__container', {
     loop: true,
 });
 const swiperNewProducts = new Swiper('.new-products__swiper', {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 15,
+    breakpoints: {
+        // when window width is >= 320px
+        576: {
+            slidesPerView: 1,
+        },
+        // when window width is >= 480px
+        992: {
+            slidesPerView: 2,
+        },
+        // when window width is >= 640px
+        1200: {
+          slidesPerView: 3,
+        }
+    },
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
