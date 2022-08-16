@@ -1,11 +1,10 @@
 //инициализация Swiper
-const swiperMainBlock = new Swiper('.main-block__container', {
+const swiperMainBlock = new Swiper('.main-block__swiper', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
     autoplay: {
-        dalay: 3000,
         stopOnLastSlide: false,
     },
     keyboard: {
@@ -14,6 +13,7 @@ const swiperMainBlock = new Swiper('.main-block__container', {
         pageUpDown: true,
     },
     loop: true,
+    speed: 600,
 });
 const swiperSliderHits = new Swiper('.slider-hits__container', {
     slidesPerView: 4,
@@ -27,7 +27,6 @@ const swiperSliderHits = new Swiper('.slider-hits__container', {
         prevEl: '.swiper-button-prev',
     },
     autoplay: {
-        dalay: 3000,
         stopOnLastSlide: false,
     },
     keyboard: {
@@ -74,6 +73,7 @@ if (popupButton){
 //меню-каталог
 let catalogLink = document.querySelectorAll('.catalog__link');
 let catalogMenu = document.querySelectorAll('.menu-catalog');
+let catalogWP = document.querySelector('.catalog-wp');
 
 if (catalogLink){
     for (let i = 0; i < catalogLink.length; i++){
@@ -92,6 +92,21 @@ if (catalogLink){
         });
     }
     
+    document.addEventListener('click', function(e){         
+        console.log(e.target);
+
+        if (!e.target.closest('.catalog-wrapper')){
+            for (let i = 0; i < catalogLink.length; i++){
+                catalogLink[i].classList.remove('_active-link');
+               
+            }
+            for (let i = 0; i < catalogMenu.length; i++){
+                catalogMenu[i].classList.remove('_open-menu');
+            }
+            
+        }
+    });
+   
 }
 //бургер
 let headerNav = document.querySelector('.header-top__nav');
@@ -129,7 +144,7 @@ if (headerIconFavourites || headerIconCart){
     }
 }
 
-let catalogWP = document.querySelector('.catalog-wp');
+
 let catalogMobile = document.querySelector('.catalog-mobile');
 let catalogWrapper = document.querySelector('.catalog-wrapper');
 

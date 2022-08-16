@@ -510,6 +510,9 @@ html {
   }
 }
 
+.catalog-wrapper {
+  position: relative;
+}
 .header-catalog {
   height: 70px;
   background-color: #141414;
@@ -579,6 +582,7 @@ html {
 
 .menu-catalog {
   font-size: 0.8888888889rem;
+  width: 100%;
   color: #fff;
   background-color: #141414;
   display: none;
@@ -587,6 +591,10 @@ html {
 .menu-catalog._open-menu {
   display: block;
   transform: translate(0, 0);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 2;
 }
 .menu-catalog a:hover {
   text-decoration: underline;

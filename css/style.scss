@@ -460,6 +460,7 @@ html {
     }
 }
 .catalog-wrapper{
+    position: relative;
     @media(max-width:768px){
         
         .open__mobile-menu{
@@ -540,6 +541,8 @@ html {
 
 .menu-catalog {
     font-size: rem(16);
+
+    width: 100%;
     color: #fff;
     background-color: #141414;
     display: none;
@@ -547,6 +550,10 @@ html {
     &._open-menu{
         display: block;
         transform: translate(0,0);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 2;
     }
     & a:hover {
         text-decoration: underline;
