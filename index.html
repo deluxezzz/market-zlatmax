@@ -297,15 +297,15 @@
                         <div class="slider__info">
                             <p class="slider__title">Интернет магазин сертифицированных</p>
                             <span class="slider__subtitle">златоустовских ножей</span>
-                            <p class="slider__text">Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В нашем магазине представлен наиболее широкий выбор Златоустовских ножей от Златоустовских Оружейных Фабрик и компаний, мы являемся официальными поставщиками.</p>
+                            <p class="slider__text">Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В нашем магазине представлен наиболее широкий выбор Златоустовских ножей от Златоустовских Оружейных Фабрик и компаний.</p>
                             <a href="" class="slider__button button">Подробнее</a>
                         </div>
                         <div class="slider__media">
                             <div class="slider__image">
                                 <img src="img/main-block/knifes.png" alt="">
-                                <a class="slider__tip slider__tip-1"><span>+</span></a>
-                                <a class="slider__tip slider__tip-2"><span>+</span></a>
-                                <a class="slider__tip slider__tip-3"><span>+</span></a>
+                                <a id="myButton1" class="slider__tip slider__tip-1"><span>+</span></a>
+                                <a id="myButton2" class="slider__tip slider__tip-2"><span>+</span></a>
+                                <a id="myButton3" class="slider__tip slider__tip-3"><span>+</span></a>
                             </div>
                         </div>
                     </div>
@@ -317,9 +317,9 @@
                         </div>
                         <div class="slider__media">
                             <div class="slider__image"><img src="img/main-block/slide-3.svg" alt=""></div>
-                            <a class="slider__tip slider__tip-1"><span>+</span></a>
+                            <!-- <a class="slider__tip slider__tip-1"><span>+</span></a>
                             <a class="slider__tip slider__tip-2"><span>+</span></a>
-                            <a class="slider__tip slider__tip-3"><span>+</span></a>
+                            <a class="slider__tip slider__tip-3"><span>+</span></a> -->
                         </div>
                     </div>
                     <div class="slider__body swiper-slide">
@@ -330,9 +330,9 @@
                         </div>
                         <div class="slider__media">
                             <div class="slider__image"><img src="img/main-block/slide-2.png" alt=""></div>
-                            <a class="slider__tip slider__tip-1"><span>+</span></a>
-                            <a class="slider__tip slider__tip-2"><span>+</span></a>
-                            <a class="slider__tip slider__tip-3"><span>+</span></a>
+                            <a id="myButton4" class="slider__tip slider__tip-4"><span>+</span></a>
+                            <!-- <a class="slider__tip slider__tip-2"><span>+</span></a>
+                            <a class="slider__tip slider__tip-3"><span>+</span></a> -->
                         </div>
                     </div>
                 </div>
@@ -1025,7 +1025,7 @@
                 <div class="catalog-cards__card card lantern-card">
                     <div class="card__info lantern-card__info">
                         <h2 class="card__title"><a href="">Тактические фонари</a></h2>
-                        <p href="" class="lantern-card__text">LED-фонари для охот и рыбалки,     ручные, с аккумулятором</p>
+                        <p href="" class="lantern-card__text">LED-фонари для охот и рыбалки, ручные, с аккумулятором</p>
                         <a href="" class="lantern-card__button button">Подробнее</a>
                     </div>
                     <img src="img/lanterns/lantern-1.png" alt="" class="card__image">
@@ -1459,6 +1459,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <script src="js/swiper-bundle.js"></script>
     <script src="js/script.js"></script>
 </body>

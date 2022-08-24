@@ -14,6 +14,17 @@ const swiperMainBlock = new Swiper('.main-block__swiper', {
     },
     loop: true,
     speed: 600,
+    on: {
+        init() {
+          this.el.addEventListener('mouseenter', () => {
+            this.autoplay.stop();
+          });
+    
+          this.el.addEventListener('mouseleave', () => {
+            this.autoplay.start();
+          });
+        }
+      },
 });
 const swiperSliderHits = new Swiper('.slider-hits__container', {
     slidesPerView: 1,
@@ -50,6 +61,17 @@ const swiperSliderHits = new Swiper('.slider-hits__container', {
         pageUpDown: true,
     },
     loop: true,
+    on: {
+        init() {
+          this.el.addEventListener('mouseenter', () => {
+            this.autoplay.stop();
+          });
+    
+          this.el.addEventListener('mouseleave', () => {
+            this.autoplay.start();
+          });
+        }
+      },
 });
 const swiperNewProducts = new Swiper('.new-products__swiper', {
     slidesPerView: 1,
@@ -85,7 +107,17 @@ const swiperNewProducts = new Swiper('.new-products__swiper', {
         onlyInViewport: true,
         pageUpDown: true,
     },
+    on: {
+        init() {
+          this.el.addEventListener('mouseenter', () => {
+            this.autoplay.stop();
+          });
     
+          this.el.addEventListener('mouseleave', () => {
+            this.autoplay.start();
+          });
+        }
+      },
 });
 
 //попап с телефонами
@@ -193,3 +225,20 @@ if (catalogWP){
         catalogWP.append(catalogWrapper);
     }
 }
+//инициализация tips
+tippy('#myButton1', {
+    content: "Нержавеющая сталь",
+    placement: 'bottom',
+});
+tippy('#myButton2', {
+    content: "Износостойкие материлы рукояти",
+    placement: 'bottom',
+});
+tippy('#myButton3', {
+    content: "Порода древисины на выбор",
+    placement: 'bottom',
+});
+tippy('#myButton4', {
+    content: "Нержавеющая сталь",
+    placement: 'bottom',
+});

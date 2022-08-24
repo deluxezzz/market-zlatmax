@@ -530,6 +530,7 @@ html {
 }
 @media (max-width: 768px) {
   .catalog__list {
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -741,18 +742,15 @@ html {
     margin-right: calc(0px + 70 * ((100vw - 320px) / 1120));
   }
 }
+.slider__info {
+  flex: 0 0 50%;
+}
 .slider__image {
+  flex: 0 0 50%;
   position: relative;
 }
 .slider__image img {
-  position: relative;
-  z-index: 2;
-}
-@media (max-width: 576px) {
-  .slider__image img {
-    width: 260px;
-    height: 290px;
-  }
+  width: 100%;
 }
 .slider__tip {
   cursor: pointer;
@@ -788,16 +786,20 @@ html {
   align-items: center;
 }
 .slider__tip-1 {
-  top: 35.6713426854%;
-  left: 14.9553571429%;
+  top: 79.7595190381%;
+  left: 21.875%;
 }
 .slider__tip-2 {
-  top: 9.8196392786%;
-  left: 91.2946428571%;
+  top: 1.6032064128%;
+  left: 40.8482142857%;
 }
 .slider__tip-3 {
-  top: 71.3426853707%;
-  left: 87.9464285714%;
+  top: 81.3627254509%;
+  left: 71.4285714286%;
+}
+.slider__tip-4 {
+  top: 83.3667334669%;
+  left: 17.8571428571%;
 }
 
 .advantages {
@@ -996,6 +998,9 @@ html {
   color: #141414;
   padding: 50px 0 20px 0;
 }
+.product-card__name a:hover {
+  text-decoration: underline;
+}
 .product-card__option {
   font-weight: 600;
   color: #ABABAB;
@@ -1044,6 +1049,7 @@ html {
 }
 .product-card__favourites {
   margin-left: 5px;
+  cursor: pointer;
 }
 .product-card__favourites-svg {
   display: inline-block;
@@ -1201,6 +1207,7 @@ html {
 .info-footer__container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   -moz-column-gap: 50px;
        column-gap: 50px;
 }
@@ -1211,7 +1218,7 @@ html {
   }
 }
 .info-footer__column {
-  flex: 0 0 22%;
+  flex: 1 1 22%;
 }
 .info-footer__title {
   font-weight: 600;
@@ -1340,4 +1347,75 @@ html {
 .footer-copyright__co {
   width: 100%;
   text-align: end;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::-moz-list-bullet {
+  list-style-type: none;
+}
+
+summary::marker {
+  display: none;
+}
+
+summary {
+  display: inline-block;
+  padding: 0.3em 1.5em 0.3em 0.6em;
+  cursor: pointer;
+  position: relative;
+}
+
+summary:before {
+  right: 0.3em;
+  top: 0.4em;
+  color: transparent;
+  background: url("../img/arrow-right-white.svg") no-repeat;
+  transform: rotateZ(90deg);
+  width: 1em;
+  height: 1em;
+  content: "";
+  position: absolute;
+}
+
+details[open] > summary:before {
+  transform: rotateZ(-90deg);
+}
+
+summary ~ * {
+  padding: 0 1em 0 1em;
+}
+
+details[open] summary ~ * {
+  -webkit-animation: sweep 0.5s ease-in-out;
+          animation: sweep 0.5s ease-in-out;
+}
+
+@-webkit-keyframes sweep {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+summary:focus {
+  outline: 0;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+details {
+  display: block;
+  margin-bottom: 0.5rem;
 }/*# sourceMappingURL=style.css.map */

@@ -486,6 +486,7 @@ html {
         justify-content: space-between;
         align-items: center;
         @media(max-width:768px){
+            display: none;
             flex-direction: column;
             position: fixed;
             top: 0;
@@ -653,8 +654,7 @@ html {
             // align-items: center;
         }
     }
-    &__info{
-    }
+    
     &__title, &__subtitle{
         font-size: rem(36);
         line-height: 128%;
@@ -696,17 +696,20 @@ html {
         @include adaptivValue('margin-right', 70, 0, 1);
         position: relative;
     }
-
+    &__info{
+        flex: 0 0 50%;
+    }
     &__image {
+        flex: 0 0 50%;
         position: relative;
-        
         & img {
-            position: relative;
-            z-index: 2;
-            @media(max-width:576px){
-                width: 260px;
-                height: 290px;
-            }
+            width: 100%;
+            // position: relative;
+            // z-index: 2;
+            // @media(max-width:576px){
+            //     width: 260px;
+            //     height: 290px;
+            // }
         }
         // &::before{
         //     content: '';
@@ -757,16 +760,20 @@ html {
         }
     }
     &__tip-1{
-        top: percentage(178/499);
-        left: percentage(67/448);
+        top: percentage(398/499);
+        left: percentage(98/448);
     }
     &__tip-2{
-        top: percentage(49/499);
-        left: percentage(409/448);
+        top: percentage(8/499);
+        left: percentage(183/448);
     }
     &__tip-3{
-        top: percentage(356/499);
-        left: percentage(394/448);
+        top: percentage(406/499);
+        left: percentage(320/448);
+    }
+    &__tip-4{
+        top: percentage(416/499);
+        left: percentage(80/448);
     }
 }
 
@@ -833,7 +840,6 @@ html {
         gap: 30px;
     }
     &-lanterns__body {
-        flex: ;
     }
     &__card {
     }
@@ -981,6 +987,9 @@ html {
         font-size: rem(20);
         color: #141414;
         padding: 50px 0 20px 0;
+        & a:hover{
+            text-decoration: underline;
+        }
     }
 
     &__option {
@@ -1051,6 +1060,7 @@ html {
 
     &__favourites {
         margin-left: 5px;
+        cursor: pointer;
     }
 
     &__favourites-svg {
@@ -1231,11 +1241,19 @@ html {
     &__container {
         display: flex;
         justify-content: space-between;
+        width: 100%;
         @include adaptivValue('column-gap', 50, 3, 1);
+        @media(max-width:992px){
+            
+        }
+        
     }
 
     &__column {
-        flex: 0 0 22%;
+        flex: 1 1 22%;
+       
+
+
     }
 
     &__title {
@@ -1381,4 +1399,48 @@ html {
         text-align: end;
     }
 }
+//настройка спойлеров
+summary::-webkit-details-marker{display:none;}
+summary::-moz-list-bullet{list-style-type:none;}
+summary::marker{display:none;} 
+summary {
+   display: inline-block;
+   padding: .3em 1.5em .3em .6em;
+   cursor: pointer;
+   position: relative;
 
+   
+}
+summary:before {
+ 
+  right: .3em;
+  top: .4em;
+  color: transparent;
+  background: url('../img/arrow-right-white.svg') no-repeat;
+  transform: rotateZ(90deg);
+  width: 1em;
+  height: 1em;  
+  content: "";
+  position: absolute;
+}
+details[open] > summary:before {
+    transform: rotateZ(-90deg);
+}
+summary ~ * {
+   padding:0 1em 0 1em;
+}
+details[open] summary ~ *{ 
+  animation: sweep .5s ease-in-out;
+}
+@keyframes sweep {
+  0%    {opacity: 0;}
+  100%  {opacity: 1;}
+}
+summary:focus {
+  outline:0;
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.3), inset 0 0 2px rgba(0,0,0,0.3);
+}
+details{
+  display:block;
+  margin-bottom: .5rem;
+}
