@@ -669,6 +669,10 @@ html {
   padding: 10px 0;
 }
 
+* img {
+  pointer-events: none;
+}
+
 .main-block {
   color: #fff;
   width: 100%;

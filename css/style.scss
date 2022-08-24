@@ -15,7 +15,7 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
-button{padding:0;border:none;font-size:inherit;color:inherit;background-color:transparent;cursor:pointer; }
+button{padding:0;border:none;font-size:inherit;color:inherit;background-color:transparent;cursor:pointer;}
 /*--------------------*/
 //Переменные
 $colorYellow: #E8AA31;
@@ -622,7 +622,9 @@ html {
         padding: 10px 0;
     }
 }
-
+*img {
+    pointer-events: none;
+}
 .main-block {
     color: #fff;
     width: 100%;
