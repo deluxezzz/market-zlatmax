@@ -1249,7 +1249,7 @@ html {
     flex: 1 1 45%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .info-footer__column {
     flex: 1 1 100%;
   }
@@ -1382,7 +1382,7 @@ html {
     flex: 1 1 45%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .add-info-footer__column {
     flex: 1 1 100%;
   }
