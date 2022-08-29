@@ -650,10 +650,8 @@ html {
         max-width: 100%;
         display: flex;
         justify-content: space-between;
-        @media(max-width:992px){
-            // display: flex;
-            // flex-direction: column;
-            // align-items: center;
+        @media(max-width:320px){
+            flex-wrap: wrap;
         }
     }
     
@@ -774,8 +772,8 @@ html {
         left: percentage(320/448);
     }
     &__tip-4{
-        top: percentage(416/499);
-        left: percentage(80/448);
+        top: percentage(20/499);
+        left: percentage(60/448);
     }
 }
 
@@ -1128,6 +1126,9 @@ html {
         display: flex;
         padding-top: 55px;
         padding-bottom: 65px;
+        @media(max-width:576px){
+            flex-wrap: wrap;
+        }
     }
     &__title {
         font-weight: 700;
@@ -1185,10 +1186,20 @@ html {
         align-items: flex-start;
         justify-content: space-between;
     }
+    &__title{
+        text-shadow: 1px 0 1px #fff, 
+                    0 1px 1px #fff, 
+                    -1px 0 1px #fff,  
+                    0 -1px 1px #fff;
+    }
     &__text{
         width: 60%;
         line-height: math.div(24,18);
         flex: 1 1 auto;
+        text-shadow: 1px 0 1px #fff, 
+                    0 1px 1px #fff, 
+                    -1px 0 1px #fff,  
+                    0 -1px 1px #fff;
     }
     &__button {
         padding: 0 80px;
@@ -1245,17 +1256,20 @@ html {
         justify-content: space-between;
         width: 100%;
         @include adaptivValue('column-gap', 50, 3, 1);
-        @media(max-width:992px){
-            
+        @media(max-width:768px){
+            flex-wrap: wrap;
+            flex: 1 1 45%;
         }
-        
     }
 
     &__column {
         flex: 1 1 22%;
-       
-
-
+        @media(max-width:768px){
+            flex: 1 1 45%;
+        }
+        @media(max-width:768px){
+            flex: 1 1 100%;
+        }
     }
 
     &__title {
@@ -1276,6 +1290,9 @@ html {
         a:hover{
             text-decoration: underline;
         }
+        @media(max-width:768px){
+            margin: 20px 0;
+        }
     }
     &__text{
         
@@ -1290,6 +1307,10 @@ html {
     &__social {
         display: flex;
         column-gap: 20px;
+        @media(max-width:768px){
+            margin-bottom: 30px;
+        }
+       
     }
 
     &__social-link {
@@ -1315,13 +1336,13 @@ html {
         margin-bottom: 20px;
     }
     &__input {
-
         width: 100%;
         height: 50px;
         padding-left: 20px;
-
-        
-        background: rgba(255, 255, 255, 0.05); 
+        background: rgba(255, 255, 255, 0.05);
+        @media(max-width:992px){
+            padding-left: 10px;
+        }
     }
     &__button {
         position: relative;
@@ -1353,6 +1374,10 @@ html {
         @include adaptivValue('column-gap', 25, 3, 1);
         position: relative;
         padding-top: 35px;
+        @media(max-width:768px){
+            flex-wrap: wrap;
+        }
+
         &::after{
             content: '';
             height: 1px;
@@ -1365,6 +1390,12 @@ html {
     }
     &__column {
         flex: 0 0 22%;
+        @media(max-width:768px){
+            flex: 1 1 45%;
+        }
+        @media(max-width:768px){
+            flex: 1 1 100%;
+        }
     }
 }
 
@@ -1382,6 +1413,9 @@ html {
         font-size: rem(14);
         line-height: math.div(27,14);
         color: rgba(255, 255, 255, 0.8);
+        @media(max-width:576px){
+            flex-wrap: wrap;
+        }
         &::after{
             content: '';
             height: 1px;

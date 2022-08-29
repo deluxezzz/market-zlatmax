@@ -1,4 +1,5 @@
 //инициализация Swiper
+
 const swiperMainBlock = new Swiper('.main-block__swiper', {
     pagination: {
         el: '.swiper-pagination',
