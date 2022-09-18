@@ -1,5 +1,4 @@
 //инициализация Swiper
-
 const swiperMainBlock = new Swiper('.main-block__swiper', {
     pagination: {
         el: '.swiper-pagination',
@@ -99,10 +98,7 @@ const swiperNewProducts = new Swiper('.new-products__swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    // autoplay: {
-    //     dalay: 3000,
-    //     stopOnLastSlide: false,
-    // },
+
     keyboard: {
         enabled: true,
         onlyInViewport: true,
@@ -146,10 +142,10 @@ if (catalogLink){
                 if(openMenu.length > 0){
                     catalogMenu[y].classList.remove('_open-menu');
                 }
-                
             }
             catalogLink[i].classList.toggle('_active-link');
             catalogMenu[i].classList.toggle('_open-menu');
+            
             event.preventDefault();
         });
     }

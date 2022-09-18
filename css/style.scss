@@ -704,28 +704,7 @@ html {
         position: relative;
         & img {
             width: 100%;
-            // position: relative;
-            // z-index: 2;
-            // @media(max-width:576px){
-            //     width: 260px;
-            //     height: 290px;
-            // }
         }
-        // &::before{
-        //     content: '';
-        //     position: absolute;
-        //     bottom: 0;
-        //     left: 0;
-        //     width: 414px;
-        //     height: 414px;
-        //     border-radius: 50%;
-        //     border: 2px solid white;
-        //     z-index: 1;
-        //     transform: translate(38% , -3.5%);
-        //     @media(max-width:992px){
-        //         display: none;
-        //     }
-        // }
     }
     &__tip{
         cursor: pointer;
@@ -772,8 +751,8 @@ html {
         left: percentage(320/448);
     }
     &__tip-4{
-        top: percentage(20/499);
-        left: percentage(60/448);
+        top: percentage(55/499);
+        left: percentage(80/448);
     }
 }
 
